@@ -1,0 +1,19 @@
+{
+  "name": "translator-bot",
+  "version": "1.0.0",
+  "description": "A bot that translates text for you",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "author": "Pedro Augusto",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "botbuilder": "^3.15.0",
+    "config": "^1.30.0",
+    "https": "^1.0.0",
+    "restify": "^7.1.2"
+  }
+}
