@@ -1,0 +1,11 @@
+{
+    "bot": {
+        "port" : 3978,
+        "microsoftAppId": "156a5d04-0b6d-4363-ba84-3a12ff2bafcc",
+        "microsoftAppPassword": "fchRUEM026+soucECB05!=~",
+        "translateKey" : "062c7892c9f7417a8ce8629571f717c3",
+        "host" : "api.cognitive.microsofttranslator.com",
+        "pathLangs" : "/languages?api-version=3.0",
+        "pathTrans" : "/translate?api-version=3.0"
+    }
+}
