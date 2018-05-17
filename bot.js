@@ -18,7 +18,7 @@ languages.get_languages();
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || botConfig.port || 3978, function() {
+server.listen(process.env.port || process.env.PORT || 3978, function() {
     console.log('%s listening to %s', server.name, server.url);
 });
 
