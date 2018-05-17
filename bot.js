@@ -33,6 +33,21 @@ server.post('/api/messages', connector.listen());
 
 var inMemoryStorage = new builder.MemoryBotStorage();
 
+let strip_bot_mention = function(session, result) {
+    var text = result.response;
+
+    if (session.message.entities) {
+        session.message.entities
+            .filter(entity => ((entity.type === "mention") && (entity.mentioned.id.toLowerCase() === session.message.address.bot.id)))
+            .forEach(entity => {
+                text = text.replace(entity.text, "");
+            });
+        text = text.trim();
+    }
+
+    return text;
+}
+
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, [
     function (session) {
@@ -40,9 +55,11 @@ var bot = new builder.UniversalBot(connector, [
     },
     function (session, result, next)
     {
-        session.dialogData.tranlateTo = result.response;
+        var text = strip_bot_mention(session, result);
+        session.dialogData.tranlateTo = text;
+
         var langs = languages.languages;
-        var lang = result.response.toLowerCase();
+        var lang = text.toLowerCase();
         var languageFound = false;
         var errorsFound = false;
 
@@ -57,10 +74,10 @@ var bot = new builder.UniversalBot(connector, [
     
         if (languageFound)
         {
-            console.log('Language "%s" found!', result.response);
+            console.log('Language "%s" found!', text);
         } else {
             if (!errorsFound) {
-                session.send('Language %s is unknow. Please start again.', result.response);
+                session.send('Language %s is unknow. Please start again.', text);
                 errorsFound = true;
             }
         }
@@ -82,7 +99,7 @@ var bot = new builder.UniversalBot(connector, [
         builder.Prompts.text(session, 'Give me a text to translate');
     },
     function (session, results) {
-        var text = results.response;
+        var text = strip_bot_mention(session, result);
         translate.translate(session, '&to=' + session.dialogData.tranlateTo, text);
     }
 ]).set('storage', inMemoryStorage);
