@@ -1,0 +1,40 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.2/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.2",
+    "version": "1.0.0",
+    "id": "25fd2940-bfc5-4642-83df-bb3d517bc4cc",
+    "packageName": "com.microsoft.teams.translatorbot",
+    "developer": {
+        "name": "Pedro Augusto",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://www.teams.com/privacy",
+        "termsOfUseUrl": "https://www.teams.com/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Translator Bot",
+        "full": "Translator Bot"
+    },
+    "description": {
+        "short": "Translator service bot",
+        "full": "A bot that can translate text for you"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "156a5d04-0b6d-4363-ba84-3a12ff2bafcc",
+            "scopes": [
+                "personal",
+                "team"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
