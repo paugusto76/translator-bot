@@ -98,7 +98,7 @@ var bot = new builder.UniversalBot(connector, [
         session.send('I will translate to "%s"', session.dialogData.translateToNativeName);
         builder.Prompts.text(session, 'Give me a text to translate');
     },
-    function (session, results) {
+    function (session, result) {
         var text = strip_bot_mention(session, result);
         translate.translate(session, '&to=' + session.dialogData.tranlateTo, text);
     }
