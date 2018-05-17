@@ -14,6 +14,6 @@
     "botbuilder": "^3.15.0",
     "config": "^1.30.0",
     "https": "^1.0.0",
-    "restify": "^7.1.2"
+    "restify": "^7.2.0"
   }
 }
