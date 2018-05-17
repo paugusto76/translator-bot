@@ -104,6 +104,10 @@ var bot = new builder.UniversalBot(connector, [
     }
 ]).set('storage', inMemoryStorage);
 
+// log any bot errors into the console
+bot.on('error', function (e) {
+    console.log('And error ocurred', e);
+});
 
 // To continue this:
 // https://www.microsoft.com/en-us/translator/trial.aspx

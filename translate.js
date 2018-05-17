@@ -16,6 +16,12 @@ exports.translate = function (session, params, text) {
         }
     };
 
+    session.send(botConfig.host);
+    session.send(botConfig.pathTrans);
+    session.send(params);
+
+    session.send(text);
+
     var result = null;
 
     let req = https.request (request_params, function (response) {
