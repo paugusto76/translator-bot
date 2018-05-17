@@ -1,8 +1,8 @@
 {
     "bot": {
         "port" : 3978,
-        "microsoftAppId": "4510a46c-7afc-43a7-958c-657c2d5dfe24",
-        "microsoftAppPassword": "cRYYQ64}{_cdrqzaGAW749^",
+        "microsoftAppId": "a5afa784-66ec-4c92-bc9a-ddde7e29cf8d",
+        "microsoftAppPassword": "ocfdE34|+lkwNDRYGY566$@",
         "translateKey" : "062c7892c9f7417a8ce8629571f717c3",
         "host" : "api.cognitive.microsofttranslator.com",
         "pathLangs" : "/languages?api-version=3.0",
